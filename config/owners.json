@@ -1,0 +1,23 @@
+{
+  "owners": [
+    {
+      "id": "matthew",
+      "name": "Matthew McKenzie",
+      "email": "matthew@remotecoffee.com",
+      "m365UserId": null,
+      "roles": ["exec", "ops", "finance"],
+      "domains": ["operations", "finance", "labor", "vendor", "inventory", "menu", "sales"]
+    }
+  ],
+  "defaultOwnerByDomain": {
+    "operations": "matthew",
+    "finance": "matthew",
+    "labor": "matthew",
+    "vendor": "matthew",
+    "inventory": "matthew",
+    "menu": "matthew",
+    "sales": "matthew",
+    "marketing": "matthew",
+    "discounts": "matthew"
+  }
+}

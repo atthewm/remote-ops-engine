@@ -1,0 +1,12 @@
+{
+  "stores": [
+    {
+      "id": "remote-coffee-garland",
+      "name": "Remote Coffee (Garland Rd)",
+      "toastGuid": "c227349d-7778-4ec2-af27-e386eb2ec52e",
+      "marginedgeId": 945747948,
+      "timezone": "America/Chicago"
+    }
+  ],
+  "defaultStoreId": "remote-coffee-garland"
+}

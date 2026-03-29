@@ -1,0 +1,36 @@
+<!--
+  Yellow Alert: MarginEdge Readiness Score below threshold
+  Posted to the Ops Daily channel
+  If still yellow at 10 AM, an escalation alert fires to the Exec channel
+-->
+
+<p style="border-left: 4px solid #f1c40f; padding-left: 8px;">
+<b>🟡 Yellow</b></p>
+
+<p><b>Topic:</b> MarginEdge readiness score at 78/100 (target: 85)</p>
+<p><b>Store:</b> Remote Coffee (Garland Rd)</p>
+<p><b>Date / Time Window:</b> 2026-03-25 (morning check)</p>
+
+<p><b>What Happened:</b> The MarginEdge readiness score is 78 out of 100, which is 7 points below the yellow threshold of 85. Two components are pulling the score down: invoice capture (17/25 points) and product mapping (14/20 points). Six invoices from last week are still in pending review status, and four new products from a recent vendor delivery have not been mapped to categories.</p>
+
+<p><b>Why It Matters:</b> An incomplete MarginEdge setup means COGS and margin calculations are based on partial data. The six pending invoices represent approximately $1,240 in purchases that are not reflected in cost reporting. Until the four unmapped products are categorized, any menu items using those ingredients will show incomplete cost data in the item margin analysis.</p>
+
+<p><b>Key Metrics:</b></p>
+<table style="border-collapse: collapse;">
+<tr><td style="padding: 2px 8px;"><b>Overall Score</b></td><td style="padding: 2px 8px;">78 / 100</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Invoice Capture</b></td><td style="padding: 2px 8px;">17 / 25</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Recipe Coverage</b></td><td style="padding: 2px 8px;">22 / 25</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Product Mapping</b></td><td style="padding: 2px 8px;">14 / 20</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Inventory Recency</b></td><td style="padding: 2px 8px;">12 / 15 (neutral, no count data)</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Vendor Mapping</b></td><td style="padding: 2px 8px;">8 / 10</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Unmapped Ingredients</b></td><td style="padding: 2px 8px;">5 / 5</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Pending Invoices</b></td><td style="padding: 2px 8px;">6 ($1,240 est.)</td></tr>
+<tr><td style="padding: 2px 8px;"><b>Unmapped Products</b></td><td style="padding: 2px 8px;">4</td></tr>
+</table>
+
+<p><b>Recommended Action:</b> Log into MarginEdge and review the six pending invoices. Approve or correct them so they are reflected in this week's cost data. Then navigate to the product list, filter by unmapped, and assign the four new products to the appropriate categories. The score should return to green once both issues are addressed.</p>
+
+<p><b>Owner:</b> Matthew McKenzie</p>
+<p><b>Due:</b> 2026-03-25T10:00:00 (before escalation check)</p>
+
+<p><b>Note:</b> If the score remains below 85 at the 10:00 AM escalation check, a follow up alert will be posted to the Exec channel.</p>

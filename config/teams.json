@@ -1,0 +1,35 @@
+{
+  "teamId": "MULTI",
+  "channels": {
+    "strategy": {
+      "teamId": "4fd82e64-a5cd-4e4e-b283-e096c778cfce",
+      "channelId": "19:7b4117f556ef4bdf962ecfdfe50ca8c0@thread.tacv2",
+      "name": "Remote Holdings > Strategy",
+      "audiences": ["exec"]
+    },
+    "finance": {
+      "teamId": "4fd82e64-a5cd-4e4e-b283-e096c778cfce",
+      "channelId": "19:7da326eddcaf476d8168d55cbcc6b187@thread.tacv2",
+      "name": "Remote Holdings > Finance",
+      "audiences": ["finance"]
+    },
+    "ops": {
+      "teamId": "4fd82e64-a5cd-4e4e-b283-e096c778cfce",
+      "channelId": "19:92c5b9cd3db84764ad095931e795d7ce@thread.tacv2",
+      "name": "Remote Holdings > Ops",
+      "audiences": ["ops"]
+    },
+    "sales": {
+      "teamId": "c7d1d51d-25ad-44ff-9bdf-991bba611333",
+      "channelId": "19:4f2267f42dad452d9c9203ce8d938bf3@thread.tacv2",
+      "name": "Remote Control > Sales",
+      "audiences": ["ops"]
+    }
+  },
+  "routingRules": {
+    "exec": ["strategy"],
+    "ops": ["ops", "sales"],
+    "finance": ["finance"],
+    "marketing": []
+  }
+}
