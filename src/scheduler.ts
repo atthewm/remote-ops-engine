@@ -1,7 +1,7 @@
 /**
  * Scheduler for the ops engine.
  * Uses croner for cron based job scheduling.
- * Runs rule evaluations on configured schedules.
+ * Runs rule evaluations and analysis jobs on configured schedules.
  */
 
 import { Cron } from 'croner';
@@ -9,6 +9,18 @@ import { RulesEngine } from './rules/engine.js';
 import { AppConfig } from './util/config.js';
 import { logger } from './util/logger.js';
 import { purgeExpired } from './util/cooldown.js';
+import {
+  runServerPerformance,
+  runWeeklyTrends,
+  runDayDecayDetection,
+  runLaborPatterns,
+  runWeatherForecast,
+  runExecutiveSummary,
+  runCompetitorPricing,
+  runReviewSummary,
+  tagDayWithWeather,
+  todayStr,
+} from './analysis/index.js';
 
 interface ScheduledJob {
   name: string;
@@ -62,6 +74,50 @@ export class Scheduler {
       purgeExpired(7);
     });
     this.jobs.push({ name: 'cooldown_purge', cron: purgeJob, ruleIds: [] });
+
+    // ── Analysis Jobs ──
+
+    const tz = 'America/Chicago';
+
+    // Daily at 7:00 PM Central: server performance and weather tagging
+    const dailyEveningJob = new Cron('0 19 * * *', { timezone: tz }, async () => {
+      logger.info('Running daily evening analysis jobs');
+      try {
+        await runServerPerformance(tz);
+      } catch (err) {
+        logger.error('Server performance analysis failed', { error: String(err) });
+      }
+      try {
+        await tagDayWithWeather(todayStr(tz));
+      } catch (err) {
+        logger.error('Weather tagging failed', { error: String(err) });
+      }
+    });
+    this.jobs.push({ name: 'analysis_daily_evening', cron: dailyEveningJob, ruleIds: [] });
+
+    // Monday at 6:00 AM Central: weekly analysis suite
+    const mondayMorningJob = new Cron('0 6 * * 1', { timezone: tz }, async () => {
+      logger.info('Running Monday morning analysis suite');
+
+      const runners: Array<{ name: string; fn: () => Promise<void> }> = [
+        { name: 'weeklyTrends', fn: () => runWeeklyTrends(tz) },
+        { name: 'dayDecayDetection', fn: () => runDayDecayDetection(tz) },
+        { name: 'laborPatterns', fn: () => runLaborPatterns(tz) },
+        { name: 'weatherForecast', fn: () => runWeatherForecast(tz) },
+        { name: 'executiveSummary', fn: () => runExecutiveSummary(tz) },
+        { name: 'competitorPricing', fn: () => runCompetitorPricing() },
+        { name: 'reviewSummary', fn: () => runReviewSummary() },
+      ];
+
+      for (const runner of runners) {
+        try {
+          await runner.fn();
+        } catch (err) {
+          logger.error(`Monday analysis failed: ${runner.name}`, { error: String(err) });
+        }
+      }
+    });
+    this.jobs.push({ name: 'analysis_monday_morning', cron: mondayMorningJob, ruleIds: [] });
 
     logger.info(`Scheduler started with ${this.jobs.length} jobs`);
   }
