@@ -1,0 +1,15 @@
+{
+  "_comment": "Competitor pricing monitoring configuration. Add entries to track.",
+  "competitors": [
+    {
+      "name": "Example Coffee Shop",
+      "type": "direct",
+      "url": "https://example.com/menu",
+      "items": [
+        { "name": "Latte (16oz)", "lastKnownPrice": 5.50 },
+        { "name": "Cold Brew (20oz)", "lastKnownPrice": 4.75 }
+      ],
+      "lastChecked": null
+    }
+  ]
+}
