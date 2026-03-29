@@ -31,5 +31,19 @@
     "ops": ["ops", "sales"],
     "finance": ["finance"],
     "marketing": []
+  },
+  "webhooks": {
+    "ops": {
+      "webhookUrl": "",
+      "name": "Ops Channel Webhook"
+    },
+    "finance": {
+      "webhookUrl": "",
+      "name": "Finance Channel Webhook"
+    },
+    "marketplace": {
+      "webhookUrl": "",
+      "name": "Marketplace Channel Webhook"
+    }
   }
 }
