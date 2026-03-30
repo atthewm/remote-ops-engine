@@ -1,13 +1,64 @@
 {
-  "_comment": "Competitor pricing monitoring configuration. Add entries to track.",
   "competitors": [
     {
-      "name": "Example Coffee Shop",
-      "type": "direct",
-      "url": "https://example.com/menu",
+      "name": "White Rock Coffee",
+      "doordashUrl": "https://www.doordash.com/store/white-rock-coffee-dallas-316242",
+      "ubereatsUrl": "",
       "items": [
-        { "name": "Latte (16oz)", "lastKnownPrice": 5.50 },
-        { "name": "Cold Brew (20oz)", "lastKnownPrice": 4.75 }
+        { "ourItem": "Drip Coffee", "theirItem": "Hot Coffee", "ourPrice": 0 },
+        { "ourItem": "Latte", "theirItem": "Latte", "ourPrice": 0 },
+        { "ourItem": "Cold Brew", "theirItem": "Cold Brew", "ourPrice": 0 },
+        { "ourItem": "Cappuccino", "theirItem": "Cappuccino", "ourPrice": 0 },
+        { "ourItem": "Matcha Latte", "theirItem": "Matcha Latte", "ourPrice": 0 }
+      ],
+      "lastChecked": null
+    },
+    {
+      "name": "Starbucks (NW Hwy Garland)",
+      "doordashUrl": "https://www.doordash.com/store/starbucks-garland-24585227/",
+      "ubereatsUrl": "",
+      "items": [
+        { "ourItem": "Drip Coffee", "theirItem": "Pike Place Roast", "ourPrice": 0 },
+        { "ourItem": "Latte", "theirItem": "Caffe Latte", "ourPrice": 0 },
+        { "ourItem": "Cold Brew", "theirItem": "Cold Brew Coffee", "ourPrice": 0 },
+        { "ourItem": "Cappuccino", "theirItem": "Cappuccino", "ourPrice": 0 },
+        { "ourItem": "Matcha Latte", "theirItem": "Matcha Tea Latte", "ourPrice": 0 }
+      ],
+      "lastChecked": null
+    },
+    {
+      "name": "La La Land Kind Cafe",
+      "doordashUrl": "https://www.doordash.com/store/la-la-land-kind-cafe-dallas-24944365/",
+      "ubereatsUrl": "",
+      "items": [
+        { "ourItem": "Latte", "theirItem": "Latte", "ourPrice": 0 },
+        { "ourItem": "Cold Brew", "theirItem": "Cold Brew", "ourPrice": 0 },
+        { "ourItem": "Matcha Latte", "theirItem": "Matcha Latte", "ourPrice": 0 },
+        { "ourItem": "Chai Latte", "theirItem": "Chai Latte", "ourPrice": 0 }
+      ],
+      "lastChecked": null
+    },
+    {
+      "name": "LDU Coffee",
+      "doordashUrl": "https://www.doordash.com/store/ldu-coffee-dallas-316586",
+      "ubereatsUrl": "",
+      "items": [
+        { "ourItem": "Drip Coffee", "theirItem": "Drip Coffee", "ourPrice": 0 },
+        { "ourItem": "Latte", "theirItem": "Latte", "ourPrice": 0 },
+        { "ourItem": "Cold Brew", "theirItem": "Cold Brew", "ourPrice": 0 },
+        { "ourItem": "Cappuccino", "theirItem": "Cappuccino", "ourPrice": 0 }
+      ],
+      "lastChecked": null
+    },
+    {
+      "name": "Ascension Coffee",
+      "doordashUrl": "https://www.doordash.com/store/ascension-dallas-48072",
+      "ubereatsUrl": "",
+      "items": [
+        { "ourItem": "Latte", "theirItem": "Latte", "ourPrice": 0 },
+        { "ourItem": "Cold Brew", "theirItem": "Cold Brew", "ourPrice": 0 },
+        { "ourItem": "Drip Coffee", "theirItem": "Freshly Brewed Coffee", "ourPrice": 0 },
+        { "ourItem": "Matcha Latte", "theirItem": "Matcha Latte", "ourPrice": 0 }
       ],
       "lastChecked": null
     }
